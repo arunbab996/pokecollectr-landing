@@ -134,8 +134,8 @@ a:hover { color: #FFD6E0; }
 .card-tilt { position: absolute; transition: transform .35s ease; }
 .card-left { left: -116px; top: 112px; width: 230px; transform: rotate(-13deg); }
 .card-right { right: -116px; top: 112px; width: 230px; transform: rotate(12deg); }
-.card-center { left: 50%; top: 24px; width: 262px; margin-left: -131px; animation: floaty 6s ease-in-out infinite; z-index: 3; }
-.grail-card { right: -160px; top: 300px; width: 150px; z-index: 0; transform: rotate(19deg); }
+.card-center { left: 50%; top: -8px; width: 262px; margin-left: -131px; animation: floaty 6s ease-in-out infinite; z-index: 3; }
+.grail-card { left: 50%; top: 356px; width: 168px; margin-left: -84px; z-index: 1; transform: rotate(-9deg); }
 .grail-art {
   display: block; width: 100%; height: auto; border-radius: 12px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, .65); border: 1px solid rgba(255, 255, 255, .06);
@@ -416,8 +416,8 @@ a:hover { color: #FFD6E0; }
   .card-fan { width: 280px; height: 280px; }
   .card-left { left: -56px; top: 58px; width: 118px; }
   .card-right { right: -56px; top: 58px; width: 118px; }
-  .card-center { top: 10px; width: 134px; margin-left: -67px; }
-  .grail-card { right: -92px; top: 161px; width: 94px; }
+  .card-center { top: -4px; width: 134px; margin-left: -67px; }
+  .grail-card { left: 50%; top: 192px; width: 90px; margin-left: -45px; }
   .grail-art { border-radius: 7px; }
   .card-frame { padding: 6px; border-radius: 11px; }
   .card-frame-center { padding: 7px; border-radius: 14px; }
