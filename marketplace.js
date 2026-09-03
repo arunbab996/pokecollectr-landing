@@ -259,7 +259,7 @@
               <div class="mp-bid-time">${formatBidTime(b.minutesAgo)}</div>
             </div>
             <div class="mp-bid-amount">${rupee(b.amount)}</div>
-          </div>`).join('') : `<p class="mp-bid-empty">No bids yet — be the first.</p>`}
+          </div>`).join('') : `<p class="mp-bid-empty">No bids yet. Be the first.</p>`}
       </div>`;
   }
 
@@ -303,7 +303,7 @@
             <span class="mp-detail-rating">${svgStar()} ${seller.rating.toFixed(1)} (${seller.reviews} rating${seller.reviews === 1 ? '' : 's'})</span>
           </div>
           <div class="mp-detail-shipping">+ ${rupee(item.shipping)} shipping</div>
-          <p class="mp-detail-policy">Please keep all payment and shipping arrangements on PokéCollectr — no off-platform deals${item.auction ? ' during an active auction' : ''}.</p>
+          <p class="mp-detail-policy">Please keep all payment and shipping arrangements on PokéCollectr. No off-platform deals${item.auction ? ' during an active auction' : ''}.</p>
         </div>
       </div>`;
   }
