@@ -20,7 +20,7 @@ a:hover { color: #FFD6E0; }
 
 /* ---------- hero wrap ---------- */
 
-.hero-wrap { position: relative; overflow: hidden; padding-bottom: 40px; }
+.hero-wrap { position: relative; overflow: hidden; padding-bottom: 130px; }
 
 .ambient-glow {
   position: absolute; top: -380px; left: 50%; transform: translateX(-50%);
@@ -135,7 +135,7 @@ a:hover { color: #FFD6E0; }
 .card-left { left: -116px; top: 112px; width: 230px; transform: rotate(-13deg); }
 .card-right { right: -116px; top: 112px; width: 230px; transform: rotate(12deg); }
 .card-center { left: 50%; top: -8px; width: 262px; margin-left: -131px; animation: floaty 6s ease-in-out infinite; z-index: 3; }
-.grail-card { left: 50%; top: 356px; width: 168px; margin-left: -84px; z-index: 1; transform: rotate(-9deg); }
+.grail-card { left: 50%; top: 300px; width: 212px; margin-left: -106px; z-index: 1; transform: rotate(-15deg); }
 .grail-art {
   display: block; width: 100%; height: auto; border-radius: 12px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, .65); border: 1px solid rgba(255, 255, 255, .06);
@@ -175,7 +175,7 @@ a:hover { color: #FFD6E0; }
 .price-tile-label { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .2em; color: #6f6d69; }
 .price-tile-value { font-size: 19px; font-weight: 700; }
 .price-tile-delta { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
-.price-tile-delta.up { color: #FFB7C5; }
+.price-tile-delta.up { color: #4fd8c4; }
 
 .sold-tile {
   position: absolute; left: 6px; bottom: 74px; display: flex; align-items: center; gap: 10px;
@@ -201,7 +201,7 @@ a:hover { color: #FFD6E0; }
 .ticker-name { font-size: 15px; font-weight: 600; }
 .ticker-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #5d5c58; }
 .ticker-delta { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
-.ticker-delta.up { color: #FFB7C5; }
+.ticker-delta.up { color: #4fd8c4; }
 .ticker-delta.down { color: #ff9d7a; }
 
 /* ---------- features ---------- */
@@ -253,14 +253,14 @@ a:hover { color: #FFD6E0; }
 }
 .chart-footer-name { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #5d5c58; }
 .chart-footer-delta { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
-.chart-footer-delta.up { margin-left: auto; color: #FFB7C5; }
+.chart-footer-delta.up { margin-left: auto; color: #4fd8c4; }
 
 .portfolio-value-card { padding: 16px; border-radius: 14px; background: #0c0c10; border: 1px solid #1c1c20; }
 .portfolio-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .14em; color: #5d5c58; }
 .portfolio-value { margin-top: 8px; font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
 .portfolio-meta { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
 .portfolio-delta { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
-.portfolio-delta.up { color: #FFB7C5; }
+.portfolio-delta.up { color: #4fd8c4; }
 .portfolio-period { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5d5c58; }
 
 .portfolio-link {
@@ -417,7 +417,8 @@ a:hover { color: #FFD6E0; }
   .card-left { left: -56px; top: 58px; width: 118px; }
   .card-right { right: -56px; top: 58px; width: 118px; }
   .card-center { top: -4px; width: 134px; margin-left: -67px; }
-  .grail-card { left: 50%; top: 192px; width: 90px; margin-left: -45px; }
+  .hero-wrap { padding-bottom: 70px; }
+  .grail-card { left: 50%; top: 161px; width: 114px; margin-left: -57px; transform: rotate(-15deg); }
   .grail-art { border-radius: 7px; }
   .card-frame { padding: 6px; border-radius: 11px; }
   .card-frame-center { padding: 7px; border-radius: 14px; }
