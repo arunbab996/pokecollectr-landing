@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PokéCollectr — Chase the holo. Own the market.</title>
+<meta name="description" content="Buy, sell and track Pokémon cards. Real collectors, real prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="hero-wrap">
+    <div class="ambient-glow"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="header">
+      <div class="header-left">
+        <a href="#explore" class="logo">
+          <span class="logo-mark"></span>
+          <span class="logo-text">POKÉ<span class="logo-accent">COLLECTR</span></span>
+        </a>
+        <nav class="nav">
+          <a href="#explore" class="nav-link">Explore</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#market" class="nav-link">Marketplace</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <a href="#market" class="btn-signin">Sign in</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <h1 class="hero-title">
+          Chase the holo.<br>
+          <span class="holo-text">Own the market.</span>
+        </h1>
+        <p class="hero-tagline">Buy, sell and track Pokémon cards. Real collectors, real prices.</p>
+        <div class="hero-ctas">
+          <a href="#market" class="btn-hero-primary">Start collecting →</a>
+          <a href="#pulse" class="btn-hero-secondary">See what's hot</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-orb"></div>
+        <div class="hero-ring"></div>
+
+        <div class="card-fan">
+          <div class="card-tilt card-left" data-tilt data-base="rotate(-13deg)">
+            <div class="card-frame card-frame-left">
+              <span class="card-sheen" data-sheen></span>
+              <div class="card-art-wrap">
+                <img class="card-art" src="assets/cards/mew-ex-hero-left.webp" alt="Mew ex card" loading="eager">
+              </div>
+            </div>
+          </div>
+
+          <div class="card-tilt card-right" data-tilt data-base="rotate(12deg)">
+            <div class="card-frame card-frame-right">
+              <span class="card-sheen" data-sheen></span>
+              <div class="card-art-wrap">
+                <img class="card-art" src="assets/cards/alakazam-ex-hero-right.webp" alt="Alakazam ex card" loading="eager">
+              </div>
+            </div>
+          </div>
+
+          <div class="card-tilt card-center" data-tilt data-base="">
+            <div class="card-frame card-frame-center">
+              <span class="card-sheen" data-sheen></span>
+              <div class="card-art-wrap">
+                <img class="card-art card-art-center" src="assets/cards/charizard-ex-hero-center.webp" alt="Mega Charizard X ex card" loading="eager">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-tile">
+          <span class="price-tile-label">CHARIZARD EX · EN</span>
+          <span class="price-tile-value">₹6,51,638</span>
+          <span class="price-tile-delta up">▲ 1.8% today</span>
+        </div>
+
+        <div class="sold-tile">
+          <span class="sold-dot"></span>
+          <span class="sold-text">Mew ex sold</span>
+          <span class="sold-time">2m ago</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="pulse" class="ticker-section">
+    <div class="ticker-track">
+      <div class="ticker-set">
+        <div class="ticker-item"><span class="ticker-name">Charizard ★</span><span class="ticker-meta">EN · 1st Ed</span><span class="ticker-delta up">▲ 4.2%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Mew ex</span><span class="ticker-meta">JA · EX Ruby</span><span class="ticker-delta up">▲ 1.8%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Umbreon ★</span><span class="ticker-meta">EN · POP 5</span><span class="ticker-delta down">▼ 0.9%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Zapdos</span><span class="ticker-meta">KO · Promo</span><span class="ticker-delta up">▲ 6.1%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Lugia</span><span class="ticker-meta">JA · Neo</span><span class="ticker-delta up">▲ 2.4%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Alakazam ex</span><span class="ticker-meta">EN · EX Sandstorm</span><span class="ticker-delta down">▼ 1.3%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Blastoise</span><span class="ticker-meta">EN · Base</span><span class="ticker-delta up">▲ 3.0%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Snorlax</span><span class="ticker-meta">JA · Jungle</span><span class="ticker-delta up">▲ 0.7%</span></div>
+      </div>
+      <div class="ticker-set" aria-hidden="true">
+        <div class="ticker-item"><span class="ticker-name">Charizard ★</span><span class="ticker-meta">EN · 1st Ed</span><span class="ticker-delta up">▲ 4.2%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Mew ex</span><span class="ticker-meta">JA · EX Ruby</span><span class="ticker-delta up">▲ 1.8%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Umbreon ★</span><span class="ticker-meta">EN · POP 5</span><span class="ticker-delta down">▼ 0.9%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Zapdos</span><span class="ticker-meta">KO · Promo</span><span class="ticker-delta up">▲ 6.1%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Lugia</span><span class="ticker-meta">JA · Neo</span><span class="ticker-delta up">▲ 2.4%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Alakazam ex</span><span class="ticker-meta">EN · EX Sandstorm</span><span class="ticker-delta down">▼ 1.3%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Blastoise</span><span class="ticker-meta">EN · Base</span><span class="ticker-delta up">▲ 3.0%</span></div>
+        <div class="ticker-item"><span class="ticker-name">Snorlax</span><span class="ticker-meta">JA · Jungle</span><span class="ticker-delta up">▲ 0.7%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="explore" class="features-section">
+    <h2 class="section-title">Everything you keep in spreadsheets.</h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num feature-num-gold">01</div>
+        <h3 class="feature-title">Every card, every language</h3>
+        <p class="feature-desc">EN, JA, ZH and KO with HD scans of every print.</p>
+        <div class="feature-body">
+          <div class="lang-table">
+            <div class="lang-row">
+              <span class="lang-code gold">EN</span>
+              <span class="lang-name">English</span>
+              <span class="lang-count">21,480</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-code gold">JA</span>
+              <span class="lang-name">Japanese</span>
+              <span class="lang-count">18,265</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-code gold">ZH</span>
+              <span class="lang-name">Chinese</span>
+              <span class="lang-count">3,910</span>
+            </div>
+            <div class="lang-row lang-row-last">
+              <span class="lang-code gold">KO</span>
+              <span class="lang-name">Korean</span>
+              <span class="lang-count">2,744</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-num feature-num-teal">02</div>
+        <h3 class="feature-title">Global reference prices</h3>
+        <p class="feature-desc">TCGplayer and Cardmarket blended per variant, per grade.</p>
+        <div class="feature-body">
+          <div class="chart-bars">
+            <div class="chart-bar" style="height:38%;background:#22222a"></div>
+            <div class="chart-bar" style="height:52%;background:#22222a"></div>
+            <div class="chart-bar" style="height:44%;background:#22222a"></div>
+            <div class="chart-bar" style="height:70%;background:#2b6d64"></div>
+            <div class="chart-bar" style="height:86%;background:#3aa596"></div>
+            <div class="chart-bar" style="height:100%;background:#4fd8c4"></div>
+          </div>
+          <div class="chart-labels">
+            <div class="chart-label">Jun</div>
+            <div class="chart-label">Jul</div>
+            <div class="chart-label">Aug</div>
+            <div class="chart-label">Sep</div>
+            <div class="chart-label">Oct</div>
+            <div class="chart-label">Nov</div>
+          </div>
+          <div class="chart-footer">
+            <span class="chart-footer-name">CHARIZARD ★ · EN · 1st Ed</span>
+            <span class="chart-footer-delta up">▲ 4.2%</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="portfolio" class="feature-card">
+        <div class="feature-num feature-num-violet">03</div>
+        <h3 class="feature-title">A portfolio worth sharing</h3>
+        <p class="feature-desc">Add what you own, valued daily. Share it as one link.</p>
+        <div class="feature-body">
+          <div class="portfolio-value-card">
+            <div class="portfolio-label">COLLECTION VALUE</div>
+            <div class="portfolio-value">₹18,42,900</div>
+            <div class="portfolio-meta">
+              <span class="portfolio-delta up">▲ 3.8%</span>
+              <span class="portfolio-period">30D · 412 cards</span>
+            </div>
+          </div>
+          <div class="portfolio-link">pokecollectr.gg/<span class="portfolio-link-user">abcthestar</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="market" class="market-section">
+    <div class="market-panel">
+      <div class="market-glow"></div>
+      <div class="market-grid">
+        <div class="market-copy">
+          <div class="market-eyebrow">THE MARKETPLACE</div>
+          <h2 class="market-title">List a card in 30 seconds. Sell it to a real collector.</h2>
+          <p class="market-desc">Every listing shows the same reference price your buyer sees, so nobody guesses. No haggling in DMs.</p>
+          <div class="market-points">
+            <div class="market-point"><span class="market-arrow">→</span><span class="market-point-text">Free to list and free to sell while we are in beta</span></div>
+            <div class="market-point"><span class="market-arrow">→</span><span class="market-point-text">Condition and grade auto-matched to the right variant</span></div>
+            <div class="market-point"><span class="market-arrow">→</span><span class="market-point-text">Buyer and seller talk directly, no middleman markup</span></div>
+          </div>
+          <a href="#market" class="btn-market-cta">List your first card</a>
+        </div>
+
+        <div class="market-listings">
+          <div class="listings-grid">
+            <a href="https://pokecollectr.in/marketplace" class="listing-card">
+              <div class="listing-chips">
+                <span class="listing-chip">EN</span>
+                <span class="listing-chip listing-chip-cond">Lightly Played</span>
+              </div>
+              <div class="listing-art-wrap"><img src="assets/cards/jolteon.png" alt="Light Jolteon #48" class="listing-art"></div>
+              <div class="listing-price">₹12,000</div>
+              <div class="listing-name">Light Jolteon #48</div>
+              <div class="listing-set">Neo Destiny</div>
+            </a>
+            <a href="https://pokecollectr.in/marketplace" class="listing-card">
+              <div class="listing-chips">
+                <span class="listing-chip">EN</span>
+                <span class="listing-chip listing-chip-cond">Near Mint</span>
+              </div>
+              <div class="listing-art-wrap"><img src="assets/cards/ditto.png" alt="Ditto #51" class="listing-art"></div>
+              <div class="listing-price">₹9,000</div>
+              <div class="listing-name">Ditto #51</div>
+              <div class="listing-set">Skyridge</div>
+            </a>
+            <a href="https://pokecollectr.in/marketplace" class="listing-card">
+              <div class="listing-chips">
+                <span class="listing-chip">EN</span>
+                <span class="listing-chip listing-chip-cond">Lightly Played</span>
+              </div>
+              <div class="listing-art-wrap"><img src="assets/cards/flareon.png" alt="Flareon #10" class="listing-art"></div>
+              <div class="listing-price">₹6,000</div>
+              <div class="listing-name">Flareon #10</div>
+              <div class="listing-set">Legendary Collection</div>
+            </a>
+            <a href="https://pokecollectr.in/marketplace" class="listing-card">
+              <div class="listing-chips">
+                <span class="listing-chip">EN</span>
+                <span class="listing-chip listing-chip-cond">Near Mint</span>
+              </div>
+              <div class="listing-art-wrap"><img src="assets/cards/psyduck.png" alt="Psyduck #79" class="listing-art"></div>
+              <div class="listing-price">₹7,500</div>
+              <div class="listing-name">Psyduck #79</div>
+              <div class="listing-set">Neo Destiny</div>
+            </a>
+            <a href="https://pokecollectr.in/marketplace" class="listing-card">
+              <div class="listing-chips">
+                <span class="listing-chip">EN</span>
+                <span class="listing-chip listing-chip-cond">Lightly Played</span>
+              </div>
+              <div class="listing-art-wrap"><img src="assets/cards/poliwrath.png" alt="Poliwrath #13" class="listing-art"></div>
+              <div class="listing-price">₹2,750</div>
+              <div class="listing-name">Poliwrath #13</div>
+              <div class="listing-set">Base Set</div>
+            </a>
+            <a href="https://pokecollectr.in/marketplace" class="listing-card">
+              <div class="listing-chips">
+                <span class="listing-chip">EN</span>
+                <span class="listing-chip listing-chip-cond">Near Mint</span>
+              </div>
+              <div class="listing-art-wrap"><img src="assets/cards/magneton.png" alt="Magneton #11" class="listing-art"></div>
+              <div class="listing-price">₹2,600</div>
+              <div class="listing-name">Magneton #11</div>
+              <div class="listing-set">Fossil</div>
+            </a>
+          </div>
+          <div class="listings-footer">
+            <span>Live listings from <span class="listings-seller">@pokechachaa</span> · verified seller</span>
+            <a href="https://pokecollectr.in/marketplace" class="listings-link">See all listings →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-section">
+    <div class="closing-panel">
+      <div class="closing-glow"></div>
+      <h2 class="closing-title">Your binder deserves better.</h2>
+      <p class="closing-desc">Free to start. Import your collection in minutes.</p>
+      <div class="closing-ctas">
+        <a href="#market" class="btn-closing-primary">Create a free portfolio</a>
+        <a href="#explore" class="btn-closing-secondary">Browse the catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#explore" class="footer-link">Explore</a>
+      <a href="#market" class="footer-link">Marketplace</a>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
