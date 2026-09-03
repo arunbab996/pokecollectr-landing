@@ -107,6 +107,7 @@
 
 .mp-filters {
   display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+  margin-top: 20px; padding-top: 20px; border-top: 1px solid #17171b;
 }
 
 .mp-pillrow { display: flex; flex-wrap: wrap; gap: 8px; }
