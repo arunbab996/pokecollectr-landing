@@ -93,6 +93,45 @@
       </article>`;
   }
 
+  function listRowHTML(item) {
+    const fav = favorites.has(item.id);
+    const badge = item.auction
+      ? `<span class="mp-badge mp-badge-live"><span class="mp-stat-dot"></span>LIVE</span>`
+      : item.kind === 'slab'
+        ? `<span class="mp-badge mp-badge-slab">${item.grade}</span>`
+        : `<span class="mp-badge mp-badge-chip">${item.lang} · ${item.cond}</span>`;
+
+    const action = item.auction
+      ? `<button class="mp-action-btn mp-action-bid" data-bid="${item.id}" type="button">Bid</button>`
+      : `<button class="mp-action-btn mp-action-cart" data-cart="${item.id}" type="button" aria-label="Add to cart">${svgCart()}</button>`;
+
+    return `
+      <article class="mp-card mp-list-row" data-id="${item.id}" role="button" tabindex="0" aria-label="View ${item.name} listing">
+        <div class="mp-list-thumb">
+          <img src="${item.img}" alt="${item.name}" loading="lazy">
+          ${item.auction ? `<span class="mp-card-time mp-list-thumb-time">${item.timeLeft}</span>` : ''}
+        </div>
+        <div class="mp-list-main">
+          <div class="mp-list-info">
+            <div class="mp-list-name-row">${badge}<span class="mp-list-name">${item.name}</span></div>
+            <div class="mp-list-set">${item.set}</div>
+            <div class="mp-list-seller-row">
+              <strong>@${item.seller}</strong>
+              ${item.verified ? `<span class="mp-verified">${svgCheck()} Verified</span>` : ''}
+            </div>
+          </div>
+          <div class="mp-list-right">
+            <div class="mp-list-price-col">
+              <span class="mp-card-price">${rupee(item.price)}</span>
+              ${item.auction ? `<span class="mp-card-bids">${item.bids} bid${item.bids === 1 ? '' : 's'}</span>` : ''}
+            </div>
+            ${action}
+            <button class="mp-fav ${fav ? 'mp-fav-active' : ''}" data-fav="${item.id}" type="button" aria-label="Favorite">${svgHeart(fav)}</button>
+          </div>
+        </div>
+      </article>`;
+  }
+
   function render() {
     const grid = document.getElementById('mpGrid');
     const empty = document.getElementById('mpEmpty');
@@ -109,7 +148,8 @@
       return;
     }
     empty.hidden = true;
-    grid.innerHTML = filtered.map(cardHTML).join('');
+    const renderItem = state.view === 'list' ? listRowHTML : cardHTML;
+    grid.innerHTML = filtered.map(renderItem).join('');
   }
 
   function modalHTML(item) {
