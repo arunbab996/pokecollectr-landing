@@ -8,13 +8,15 @@
 }
 
 .nav-link-active {
-  color: #f4f3f1;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid #4fd8c4;
-  background: rgba(79, 216, 196, .08);
+  color: #4fd8c4;
+  font-weight: 600;
 }
-.nav-link-active:hover { color: #f4f3f1; }
+.nav-link-active:hover { color: #4fd8c4; }
+
+.header-icons {
+  display: flex; align-items: center; gap: 2px;
+  padding-right: 14px; margin-right: 8px; border-right: 1px solid #1c1c20;
+}
 
 .icon-btn {
   position: relative;
@@ -89,11 +91,18 @@
 
 .mp-sell-cta { margin-top: 0; padding: 16px 24px; white-space: nowrap; }
 
+/* ---------- toolbar panel (stats + filters grouped together) ---------- */
+
+.mp-toolbar-panel {
+  margin-top: 20px; padding: 20px 22px; border-radius: 18px; border: 1px solid #1c1c20;
+  background: linear-gradient(180deg, #0e0e12, #0b0b0e);
+}
+
 /* ---------- stats ---------- */
 
 .mp-stats {
   display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center;
-  margin-top: 22px; font-size: 14px; color: #8f8d89;
+  font-size: 14px; color: #8f8d89;
 }
 .mp-stats strong { color: #f4f3f1; font-weight: 600; }
 .mp-stats .mp-stat-live { display: flex; align-items: center; gap: 8px; color: #ff9d7a; }
@@ -106,9 +115,8 @@
 
 .mp-filters {
   display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
-  margin-top: 24px; padding-top: 22px; border-top: 1px solid #17171b;
+  margin-top: 18px; padding-top: 18px; border-top: 1px solid #17171b;
 }
-.mp-filters-right { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
 
 .mp-pillrow { display: flex; flex-wrap: wrap; gap: 8px; }
 
@@ -119,10 +127,10 @@
 }
 .mp-pill:hover { border-color: #3a3a42; color: #f4f3f1; }
 .mp-pill-active, .mp-pill-active:hover {
-  background: #f2d16b; border-color: #f2d16b; color: #111111;
+  background: rgba(79, 216, 196, .14); border-color: #4fd8c4; color: #eafffb;
 }
 
-.mp-controls-right { display: flex; align-items: center; gap: 10px; }
+.mp-controls-right { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 
 .mp-sort {
   appearance: none; -webkit-appearance: none;
@@ -200,7 +208,7 @@
   color: #ff9d7a; border: 1px solid #23232a;
 }
 
-.mp-card-price-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.mp-card-price-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 30px; }
 .mp-card-price { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #f2d16b; }
 .mp-card-bids { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6f6d69; margin-left: 6px; }
 
@@ -256,11 +264,13 @@
 @media (max-width: 900px) {
   .mp-main { padding: 28px 32px 76px; }
   .mp-filters { flex-direction: column; align-items: flex-start; }
+  .mp-controls-right { width: 100%; justify-content: space-between; }
 }
 
 @media (max-width: 560px) {
   .mp-header { padding: 16px 18px; }
   .header-right { gap: 6px; }
+  .header-icons { padding-right: 8px; margin-right: 4px; }
   .avatar-name { display: none; }
   .avatar-btn { padding: 6px; }
 
@@ -269,9 +279,11 @@
   .mp-search { height: 50px; width: 100%; }
   .mp-sell-cta { width: 100%; text-align: center; justify-content: center; padding: 13px 20px; }
 
+  .mp-toolbar-panel { padding: 16px; }
   .mp-stats { font-size: 12px; gap: 6px 14px; }
 
-  .mp-filters-right { width: 100%; justify-content: space-between; }
+  .mp-controls-right { width: 100%; }
+  .mp-sort { flex: 1 1 auto; }
 
   .mp-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
 

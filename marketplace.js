@@ -150,12 +150,8 @@
     render();
   });
 
-  const langRow = document.getElementById('langFilters');
-  langRow.addEventListener('click', (e) => {
-    const btn = e.target.closest('.mp-pill');
-    if (!btn) return;
-    state.lang = btn.dataset.lang;
-    setActivePill(langRow, btn);
+  document.getElementById('langSelect').addEventListener('change', (e) => {
+    state.lang = e.target.value;
     render();
   });
 

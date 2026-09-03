@@ -28,18 +28,20 @@
       </nav>
     </div>
     <div class="header-right">
-      <button class="icon-btn" id="notifBtn" type="button" aria-label="Notifications">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-        <span class="icon-badge">1</span>
-      </button>
-      <button class="icon-btn" id="chatBtn" type="button" aria-label="Messages">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        <span class="icon-badge">1</span>
-      </button>
-      <button class="icon-btn" id="cartBtn" type="button" aria-label="Cart">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        <span class="icon-badge" id="cartBadge" hidden>0</span>
-      </button>
+      <div class="header-icons">
+        <button class="icon-btn" id="notifBtn" type="button" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="icon-badge">1</span>
+        </button>
+        <button class="icon-btn" id="chatBtn" type="button" aria-label="Messages">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span class="icon-badge">1</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" type="button" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="icon-badge" id="cartBadge" hidden>0</span>
+        </button>
+      </div>
 
       <div class="avatar-menu">
         <button class="avatar-btn" id="avatarBtn" type="button" aria-haspopup="true" aria-expanded="false">
@@ -68,25 +70,25 @@
       <a href="#" class="btn-market-cta mp-sell-cta">+ Sell a card</a>
     </div>
 
-    <div class="mp-stats" id="mpStats"></div>
+    <div class="mp-toolbar-panel">
+      <div class="mp-stats" id="mpStats"></div>
 
-    <div class="mp-filters">
-      <div class="mp-pillrow" id="typeFilters" role="tablist">
-        <button class="mp-pill mp-pill-active" data-type="everything" type="button">Everything</button>
-        <button class="mp-pill" data-type="single" type="button">Singles</button>
-        <button class="mp-pill" data-type="slab" type="button">Slabs</button>
-        <button class="mp-pill" data-type="bundle" type="button">Bundles</button>
-        <button class="mp-pill" data-type="auction" type="button">Auctions</button>
-      </div>
-      <div class="mp-filters-right">
-        <div class="mp-pillrow" id="langFilters">
-          <button class="mp-pill mp-pill-active" data-lang="all" type="button">All languages</button>
-          <button class="mp-pill" data-lang="EN" type="button">EN</button>
-          <button class="mp-pill" data-lang="JA" type="button">JA</button>
-          <button class="mp-pill" data-lang="KO" type="button">KO</button>
-          <button class="mp-pill" data-lang="CN" type="button">CN</button>
+      <div class="mp-filters">
+        <div class="mp-pillrow" id="typeFilters" role="tablist">
+          <button class="mp-pill mp-pill-active" data-type="everything" type="button">Everything</button>
+          <button class="mp-pill" data-type="single" type="button">Singles</button>
+          <button class="mp-pill" data-type="slab" type="button">Slabs</button>
+          <button class="mp-pill" data-type="bundle" type="button">Bundles</button>
+          <button class="mp-pill" data-type="auction" type="button">Auctions</button>
         </div>
         <div class="mp-controls-right">
+          <select id="langSelect" class="mp-sort">
+            <option value="all">All languages</option>
+            <option value="EN">English</option>
+            <option value="JA">Japanese</option>
+            <option value="KO">Korean</option>
+            <option value="CN">Chinese</option>
+          </select>
           <select id="sortSelect" class="mp-sort">
             <option value="newest">Newest</option>
             <option value="price-asc">Price: low to high</option>
