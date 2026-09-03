@@ -72,7 +72,7 @@
          <button class="mp-action-btn mp-action-cart" data-cart="${item.id}" type="button" aria-label="Add to cart">${svgCart()}</button>`;
 
     return `
-      <article class="mp-card" data-id="${item.id}">
+      <article class="mp-card" data-id="${item.id}" role="button" tabindex="0" aria-label="View ${item.name} listing">
         <div class="mp-card-top">
           ${badge}
           <button class="mp-fav ${fav ? 'mp-fav-active' : ''}" data-fav="${item.id}" type="button" aria-label="Favorite">${svgHeart(fav)}</button>
@@ -93,21 +93,6 @@
       </article>`;
   }
 
-  function renderStats() {
-    const sellers = new Set(LISTINGS.map((l) => l.seller)).size;
-    const slabs = LISTINGS.filter((l) => l.kind === 'slab').length;
-    const auctionsLive = LISTINGS.filter((l) => l.auction).length;
-    const prices = LISTINGS.map((l) => l.price);
-    const min = Math.min(...prices), max = Math.max(...prices);
-    document.getElementById('mpStats').innerHTML = `
-      <span><strong>${LISTINGS.length}</strong> listed</span>
-      <span><strong>${sellers}</strong> sellers</span>
-      <span><strong>${slabs}</strong> slabs</span>
-      <span>${rupee(min)}–${rupee(max)} range</span>
-      <span class="mp-stat-live"><span class="mp-stat-dot"></span>${auctionsLive} auctions live</span>
-    `;
-  }
-
   function render() {
     const grid = document.getElementById('mpGrid');
     const empty = document.getElementById('mpEmpty');
@@ -126,6 +111,106 @@
     empty.hidden = true;
     grid.innerHTML = filtered.map(cardHTML).join('');
   }
+
+  function modalHTML(item) {
+    const fav = favorites.has(item.id);
+    const badge = item.auction
+      ? `<span class="mp-badge mp-badge-live"><span class="mp-stat-dot"></span>LIVE</span>`
+      : item.kind === 'slab'
+        ? `<span class="mp-badge mp-badge-slab">${item.grade}</span>`
+        : `<span class="mp-badge mp-badge-chip">${item.lang} · ${item.cond}</span>`;
+
+    const action = item.auction
+      ? `<button class="mp-modal-action mp-modal-action-bid" data-modal-bid="${item.id}" type="button">Place a bid</button>`
+      : `<button class="mp-modal-action mp-modal-action-cart" data-modal-cart="${item.id}" type="button">Add to cart</button>`;
+
+    const langNames = { EN: 'English', JA: 'Japanese', KO: 'Korean', CN: 'Chinese' };
+
+    return `
+      <div class="mp-modal-grid">
+        <div class="mp-modal-art-wrap">
+          <img class="mp-modal-art" src="${item.img}" alt="${item.name}">
+          ${item.auction ? `<span class="mp-modal-time">${item.timeLeft} left</span>` : ''}
+        </div>
+        <div class="mp-modal-info">
+          <div class="mp-modal-top">
+            ${badge}
+            <button class="mp-fav ${fav ? 'mp-fav-active' : ''}" data-fav="${item.id}" type="button" aria-label="Favorite">${svgHeart(fav)}</button>
+          </div>
+          <h2 class="mp-modal-name">${item.name}</h2>
+          <div class="mp-modal-set">${item.set}</div>
+
+          <div class="mp-modal-price-row">
+            <span class="mp-modal-price">${rupee(item.price)}</span>
+            ${item.auction ? `<span class="mp-modal-bids">${item.bids} bid${item.bids === 1 ? '' : 's'} so far</span>` : ''}
+          </div>
+          ${action}
+
+          <div class="mp-modal-details">
+            <div><div class="mp-modal-detail-label">SET</div><div class="mp-modal-detail-value">${item.set}</div></div>
+            <div><div class="mp-modal-detail-label">LISTING TYPE</div><div class="mp-modal-detail-value">${item.auction ? 'Live auction' : 'Buy now'}</div></div>
+            <div><div class="mp-modal-detail-label">LANGUAGE</div><div class="mp-modal-detail-value">${langNames[item.lang] || item.lang}</div></div>
+            <div><div class="mp-modal-detail-label">${item.kind === 'slab' ? 'GRADE' : 'CONDITION'}</div><div class="mp-modal-detail-value">${item.kind === 'slab' ? item.grade : item.cond}</div></div>
+          </div>
+
+          <div class="mp-modal-seller">
+            <span class="mp-modal-seller-name"><strong>@${item.seller}</strong></span>
+            ${item.verified ? `<span class="mp-verified">${svgCheck()} Verified seller</span>` : `<span style="color:#6f6d69;font-size:13px">Unverified seller</span>`}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const modalBackdrop = document.getElementById('mpModalBackdrop');
+  const modalBody = document.getElementById('mpModalBody');
+  let activeItem = null;
+
+  function openModal(item) {
+    activeItem = item;
+    modalBody.innerHTML = modalHTML(item);
+    modalBackdrop.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalBackdrop.hidden = true;
+    activeItem = null;
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('mpModalClose').addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modalBackdrop.hidden) closeModal();
+  });
+
+  modalBody.addEventListener('click', (e) => {
+    const favBtn = e.target.closest('[data-fav]');
+    if (favBtn) {
+      const id = Number(favBtn.dataset.fav);
+      if (favorites.has(id)) favorites.delete(id); else favorites.add(id);
+      saveFavorites();
+      if (activeItem) modalBody.innerHTML = modalHTML(activeItem);
+      render();
+      return;
+    }
+    const bidBtn = e.target.closest('[data-modal-bid]');
+    if (bidBtn) {
+      showToast(`Bid placed on ${activeItem.name}`);
+      return;
+    }
+    const cartBtn = e.target.closest('[data-modal-cart]');
+    if (cartBtn) {
+      cartCount += 1;
+      const badge = document.getElementById('cartBadge');
+      badge.hidden = false;
+      badge.textContent = String(cartCount);
+      showToast(`${activeItem.name} added to cart`);
+      return;
+    }
+  });
 
   function showToast(msg) {
     const toast = document.getElementById('toast');
@@ -200,7 +285,8 @@
   });
 
   // card actions (event delegation)
-  document.getElementById('mpGrid').addEventListener('click', (e) => {
+  const mpGrid = document.getElementById('mpGrid');
+  mpGrid.addEventListener('click', (e) => {
     const favBtn = e.target.closest('[data-fav]');
     if (favBtn) {
       const id = Number(favBtn.dataset.fav);
@@ -225,6 +311,19 @@
       showToast(`${item.name} added to cart`);
       return;
     }
+    const card = e.target.closest('.mp-card');
+    if (card) {
+      const item = LISTINGS.find((l) => l.id === Number(card.dataset.id));
+      if (item) openModal(item);
+    }
+  });
+  mpGrid.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.mp-card');
+    if (!card) return;
+    e.preventDefault();
+    const item = LISTINGS.find((l) => l.id === Number(card.dataset.id));
+    if (item) openModal(item);
   });
 
   // sell CTA
@@ -256,6 +355,5 @@
     showToast(cartCount ? `${cartCount} item${cartCount === 1 ? '' : 's'} in cart` : 'Your cart is empty');
   });
 
-  renderStats();
   render();
 })();
