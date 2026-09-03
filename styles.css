@@ -135,6 +135,11 @@ a:hover { color: #8ff0e2; }
 .card-left { left: -116px; top: 112px; width: 230px; transform: rotate(-13deg); }
 .card-right { right: -116px; top: 112px; width: 230px; transform: rotate(12deg); }
 .card-center { left: 50%; top: 24px; width: 262px; margin-left: -131px; animation: floaty 6s ease-in-out infinite; z-index: 3; }
+.grail-card { right: -160px; top: 300px; width: 150px; z-index: 0; transform: rotate(19deg); }
+.grail-art {
+  display: block; width: 100%; height: auto; border-radius: 12px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .65); border: 1px solid rgba(255, 255, 255, .06);
+}
 
 .card-frame {
   position: relative; border-radius: 16px; padding: 9px;
@@ -412,6 +417,8 @@ a:hover { color: #8ff0e2; }
   .card-left { left: -56px; top: 58px; width: 118px; }
   .card-right { right: -56px; top: 58px; width: 118px; }
   .card-center { top: 10px; width: 134px; margin-left: -67px; }
+  .grail-card { right: -92px; top: 161px; width: 94px; }
+  .grail-art { border-radius: 7px; }
   .card-frame { padding: 6px; border-radius: 11px; }
   .card-frame-center { padding: 7px; border-radius: 14px; }
   .card-art { height: 150px; border-radius: 7px; }
