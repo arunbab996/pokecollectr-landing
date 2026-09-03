@@ -6,7 +6,10 @@ a:hover { color: #FFD6E0; }
 
 @keyframes holo { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes floaty {
+  0%, 100% { transform: var(--floaty-base, ) translateY(0); }
+  50% { transform: var(--floaty-base, ) translateY(-14px); }
+}
 @keyframes glowpulse { 0%, 100% { opacity: .45; } 50% { opacity: .9; } }
 @keyframes spinslow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
@@ -20,7 +23,7 @@ a:hover { color: #FFD6E0; }
 
 /* ---------- hero wrap ---------- */
 
-.hero-wrap { position: relative; overflow: hidden; padding-bottom: 130px; }
+.hero-wrap { position: relative; overflow: hidden; padding-bottom: 40px; }
 
 .ambient-glow {
   position: absolute; top: -380px; left: 50%; transform: translateX(-50%);
@@ -135,7 +138,11 @@ a:hover { color: #FFD6E0; }
 .card-left { left: -116px; top: 112px; width: 230px; transform: rotate(-13deg); }
 .card-right { right: -116px; top: 112px; width: 230px; transform: rotate(12deg); }
 .card-center { left: 50%; top: -8px; width: 262px; margin-left: -131px; animation: floaty 6s ease-in-out infinite; z-index: 3; }
-.grail-card { left: 50%; top: 300px; width: 212px; margin-left: -106px; z-index: 1; transform: rotate(-15deg); }
+.grail-card {
+  left: 50%; top: 24px; width: 250px; margin-left: -95px; z-index: 4;
+  --floaty-base: rotate(8deg); transform: rotate(8deg);
+  animation: floaty 6s ease-in-out infinite; animation-delay: -3s;
+}
 .grail-art {
   display: block; width: 100%; height: auto; border-radius: 12px;
   box-shadow: 0 30px 70px rgba(0, 0, 0, .65); border: 1px solid rgba(255, 255, 255, .06);
@@ -417,8 +424,7 @@ a:hover { color: #FFD6E0; }
   .card-left { left: -56px; top: 58px; width: 118px; }
   .card-right { right: -56px; top: 58px; width: 118px; }
   .card-center { top: -4px; width: 134px; margin-left: -67px; }
-  .hero-wrap { padding-bottom: 70px; }
-  .grail-card { left: 50%; top: 161px; width: 114px; margin-left: -57px; transform: rotate(-15deg); }
+  .grail-card { top: 13px; width: 135px; margin-left: -51px; transform: rotate(8deg); }
   .grail-art { border-radius: 7px; }
   .card-frame { padding: 6px; border-radius: 11px; }
   .card-frame-center { padding: 7px; border-radius: 14px; }
