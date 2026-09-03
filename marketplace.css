@@ -152,7 +152,7 @@
 
 .mp-result-count {
   margin-top: 22px; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 15px;
-  letter-spacing: .04em; color: #f2d16b;
+  letter-spacing: .04em; color: #4fd8c4;
 }
 
 /* ---------- grid ---------- */
@@ -206,7 +206,7 @@
 }
 
 .mp-card-price-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 30px; }
-.mp-card-price { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #f2d16b; }
+.mp-card-price { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #4fd8c4; }
 .mp-card-bids { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6f6d69; margin-left: 6px; }
 
 .mp-action-btn {
@@ -325,7 +325,7 @@
   cursor: pointer; overflow: hidden;
 }
 .mp-detail-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.mp-detail-thumb-active { border-color: #f2d16b; }
+.mp-detail-thumb-active { border-color: #4fd8c4; }
 
 /* info column */
 
@@ -342,7 +342,7 @@
 .mp-detail-panel-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #5d5c58; }
 
 .mp-detail-auction-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.mp-detail-price { margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: 30px; color: #f2d16b; }
+.mp-detail-price { margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: 30px; color: #4fd8c4; }
 .mp-detail-ended { margin-top: 6px; font-size: 14px; color: #6f6d69; }
 
 .mp-countdown-wrap { text-align: right; }
@@ -372,10 +372,10 @@
 }
 .mp-detail-bid-form .mp-modal-action { flex: 0 0 auto; }
 .mp-detail-panel > .mp-modal-action { display: block; width: 100%; margin-top: 14px; }
-.mp-modal-action-bid { background: #f2d16b; color: #111111; }
-.mp-modal-action-bid:hover { background: #ffe89a; }
-.mp-modal-action-cart { background: #f2d16b; color: #111111; }
-.mp-modal-action-cart:hover { background: #ffe89a; }
+.mp-modal-action-bid { background: #4fd8c4; color: #111111; }
+.mp-modal-action-bid:hover { background: #8ff0e2; }
+.mp-modal-action-cart { background: #4fd8c4; color: #111111; }
+.mp-modal-action-cart:hover { background: #8ff0e2; }
 
 .mp-bid-row {
   display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
@@ -392,7 +392,7 @@
 .mp-detail-seller-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; }
 .mp-unverified { font-size: 13px; color: #6f6d69; }
 .mp-detail-rating { display: flex; align-items: center; gap: 5px; margin-left: auto; font-size: 13px; color: #cfcdc8; }
-.mp-detail-rating svg { width: 13px; height: 13px; color: #f2d16b; }
+.mp-detail-rating svg { width: 13px; height: 13px; color: #4fd8c4; }
 .mp-detail-shipping { margin-top: 12px; font-size: 13px; color: #8f8d89; }
 .mp-detail-policy { margin: 12px 0 0; font-size: 12px; line-height: 1.6; color: #5d5c58; }
 
