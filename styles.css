@@ -382,6 +382,23 @@ a:hover { color: #FFD6E0; }
 .footer-link:hover { color: #ffffff; }
 
 /* ========================================================= */
+/* Responsive: desktop — fill the viewport so the ticker      */
+/* lands at the bottom of the first screen instead of         */
+/* sitting high up with empty space below it                  */
+/* ========================================================= */
+
+@media (min-width: 901px) {
+  .hero-wrap { display: flex; flex-direction: column; min-height: calc(100vh - 64px); }
+  .hero { flex: 1; align-content: center; }
+}
+
+@media (min-width: 1700px) {
+  .hero-title { font-size: 104px; }
+  .hero-tagline { font-size: 22px; }
+  .hero-visual { transform: scale(1.14); }
+}
+
+/* ========================================================= */
 /* Responsive: tablet — stack the two-column grids            */
 /* ========================================================= */
 
